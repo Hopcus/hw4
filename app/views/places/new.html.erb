@@ -3,6 +3,7 @@
 
 <%= form_with :model => @place do |form| %>
   <p>
+    <%= form.hidden_field "user_id" %>
     <%= form.label "name" %>
     <%= form.text_field "name" %>
   </p>

@@ -5,7 +5,7 @@
 <div class="row">
   <% if @current_user %>
   <% for post in @posts %>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-6 col-lg-3">
     <h5><%= post["title"] %></h5>
     <h6><%= post["posted_on"] %></h6>
     <h7><%= post["description"] %></h7>
