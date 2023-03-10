@@ -2,11 +2,9 @@
   <% for post in @posts %>
     <div class="col-md-3 col-sm-6">
       <h4>
-        <%# find user who created post %>
         <% user = User.find_by({ "id" => post["user_id"] }) %>
-        <%# handle any potential bad data where the post is missing a user %>
         <% if user %>
-          <%= user["first_name"] %>
+          <%= user["username"] %>
         <% else %>
           anonymous
         <% end %>

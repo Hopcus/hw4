@@ -1,6 +1,7 @@
-<h1>New Post</h1>
-
 <% if @current_user %>
+  <h1>New Post</h1>
+
+
   <%= form_with :model => @post do |form| %>
     <%= form.hidden_field "place_id" %>
     <div class="mb-3">
@@ -26,6 +27,9 @@
     <p>
       <%= form.submit %>
    </p>
+   <p>
+      <button type="button" class="btn btn-light"><a href="/places">Back to All Places</a></button>
+    </p>
   <% end %>
 <% else %>
   You must first <a href="/login">login</a> to post.

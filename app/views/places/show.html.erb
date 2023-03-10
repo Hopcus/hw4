@@ -1,7 +1,6 @@
-<h1><%= @place["name"] %></h1>
-
 <h4>Memories from my time in <%= @place["name"]%></h4>
 
+<div class="container">
 <div class="row">
   <% if @current_user %>
   <% for post in @posts %>
@@ -9,11 +8,11 @@
     <h5><%= post["title"] %></h5>
     <h6><%= post["posted_on"] %></h6>
     <h7><%= post["description"] %></h7>
-  <%if post.uploaded_image.attached? %>
-        <img src="<%= url_for(post.uploaded_image)%>" class="img-fluid">
-      <%else%>
-        <img src="<%= post["image"]%>" class="img-fluid">
-      <% end %>
+    <%if post.uploaded_image.attached? %>
+         <img src="<%= url_for(post.uploaded_image)%>" class="img-fluid">
+        <%else%>
+          <img src="<%= post["image"]%>" class="img-fluid">
+        <% end %>
   </div>
 <%end%>
 

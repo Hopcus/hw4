@@ -1,6 +1,7 @@
 <div class="container">
-<h1>Places</h1>
 
+<% if @current_user %>
+<h1>Places</h1>
 <ul>
   <% for place in @places %>
     <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
@@ -12,5 +13,9 @@
   <button type="button" class="btn btn-success"><a href="/places/new"class="link-light">New place</a></button>
 
 </p>
+
+<% else %>
+  You must first <a href="/login">login</a> to add a place or to post.
+<% end %>
 
 </div>
