@@ -22,6 +22,6 @@ test:
 
 production:
   <<: *default
-  database: tacogram_final_production
-  username: tacogram_final
-  password: <%= ENV["TACOGRAM_FINAL_DATABASE_PASSWORD"] %>
+  database: alyssa-hw4_production
+  username: alyssa-hw4
+  password: <%= ENV["ALYSSA-HW4_DATABASE_PASSWORD"] %>
