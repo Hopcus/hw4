@@ -1,19 +1,19 @@
 <h1><%= @place["name"] %></h1>
 
-<h2>My Posts</h2>
+<h4>Memories from my time in <%= @place["name"]%></h4>
 
-<div class="container">
-  <div class="row">
-  <% if @current_user%>
+<div class="row">
+  <% if @current_user %>
   <% for post in @posts %>
-      <h3><%= post["title"] %></h3>
-      <h4><%= post["posted_on"] %></h4>
-      <p><%= post["description"] %></p>
-    <%if post.uploaded_image.attached? %>
+    <div class="col-md-3 col-sm-6">
+    <h5><%= post["title"] %></h5>
+    <h6><%= post["posted_on"] %></h6>
+    <h7><%= post["description"] %></h7>
+  <%if post.uploaded_image.attached? %>
         <img src="<%= url_for(post.uploaded_image)%>" class="img-fluid">
       <%else%>
-         <img src="<%= post["image"]%>" class="img-fluid">
-    <% end %>
+        <img src="<%= post["image"]%>" class="img-fluid">
+      <% end %>
   </div>
 <%end%>
 
@@ -21,7 +21,8 @@
  <button type="button" class="btn btn-success"><a href="/posts/new?place_id=<%= @place["id"] %>"class="link-light">New Post</a></button></p>
 
 <p>
-  <button type="button" class="btn btn-light">  <a href="/places">Back to Places</a></button>
+  <button type="button" class="btn btn-light">  <a href="/places">Back to Places</a> </button>
 </p>
+
 <% end %>
 </div>
