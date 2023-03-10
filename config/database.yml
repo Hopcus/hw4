@@ -22,6 +22,7 @@ test:
 
 production:
   <<: *default
-  database: alyssa-hw4_production
-  username: alyssa-hw4
-  password: <%= ENV["ALYSSA-HW4_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  database: hw4_production
+  username: hw4
+  password: <%= ENV["HW4_DATABASE_PASSWORD"] %>
